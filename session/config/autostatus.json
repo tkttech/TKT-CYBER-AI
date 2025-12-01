@@ -1,0 +1,8 @@
+{
+  "enabled": true,
+  "react": true,
+  "emoji": "🕷️",
+  "throttleMs": 30000,
+  "viewDelayMin": 1000,
+  "viewDelayMax": 3000
+}
