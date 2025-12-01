@@ -1,0 +1,46 @@
+version: '3.8'
+
+services:
+  vesperr-bot:
+    build: .
+    container_name: vesperr-whatsapp-bot
+    restart: unless-stopped
+    env_file:
+      - .env
+    ports:
+      - "${HEALTH_CHECK_PORT:-3000}:3000"
+    volumes:
+      - ./data:/app/data
+      - ./logs:/app/logs
+      - ./vesperr:/app/vesperr
+    networks:
+      - vesperr-network
+    healthcheck:
+      test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://localhost:3000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 60s
+
+  # Optional: PostgreSQL database (uncomment to use instead of SQLite)
+  # postgres:
+  #   image: postgres:15-alpine
+  #   container_name: vesperr-postgres
+  #   restart: unless-stopped
+  #   environment:
+  #     POSTGRES_DB: ${DB_NAME:-vesperr}
+  #     POSTGRES_USER: ${DB_USER:-vesperr}
+  #     POSTGRES_PASSWORD: ${DB_PASSWORD:-vesperr_password}
+  #   ports:
+  #     - "5432:5432"
+  #   volumes:
+  #     - postgres_data:/var/lib/postgresql/data
+  #   networks:
+  #     - vesperr-network
+
+networks:
+  vesperr-network:
+    driver: bridge
+
+volumes:
+  postgres_data:
