@@ -1,7 +1,7 @@
+# 𝐓𝐊𝐓-𝐂𝐘𝐁𝐄𝐑-𝐀𝐈
+<a><img src='https://files.catbox.moe/vnu745.png'/>
 
-</p> 
-<p align="center"> 
-<a href="><img src='https://files.catbox.moe/qic338.png'/>
+
 </a>
 </p>
 <p align="center">
@@ -45,7 +45,7 @@ GETS THE SESSION_ID HERE
 
 
    
-<a><img src='https://files.catbox.moe/1cp4yq.jpeg'/>
+<a><img src='https://files.catbox.moe/qic338.png'/>
 
 
 
